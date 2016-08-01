@@ -1,0 +1,6 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% for project in portfolio_projects %}
+    <h2><a href="#">{{ project.project_name }}</a></h2>
+  {% endfor %}
+{% endblock %}  
