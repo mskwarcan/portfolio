@@ -1,5 +1,2 @@
 Django==1.9.8
-djangotoolbox==1.8.0
-pymongo==3.3.0
-vboxapi==1.0
 virtualenv==15.0.2
