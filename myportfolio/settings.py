@@ -29,6 +29,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'main',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,8 +83,10 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfolio-python',                      
+        'USER': 'mikeskwarcan',
+        'PASSWORD': 'skwarcan',
     }
 }
 
@@ -111,7 +116,8 @@ USE_TZ = True
 
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -133,3 +139,15 @@ STATICFILES_DIRS = [
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAI3R6AZQE4ACBD5LQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'portfolio-skwarcan'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'app54482535@heroku.com'
+EMAIL_HOST_PASSWORD = 'vaqfnz0k6636'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+SITE_ID = 1

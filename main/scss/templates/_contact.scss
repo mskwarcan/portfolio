@@ -1,0 +1,43 @@
+form {
+  ul.errorlist {
+    margin:0;
+    padding:0;
+    
+    li {
+      display:inline-block;
+      color:#eb2727;
+      font-size:16px;
+      padding:5px 15px;
+      background:#fff;
+      border-radius:5px;
+    }
+  }
+  
+  label {
+    font-size:18px;
+    text-transform:capitalize;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    display:block;
+    margin:5px auto;
+    width:280px;
+    border:none;
+    font-family:Helvetica, Arial;
+    border-radius:5px;
+    background:$highlight;
+    padding:5px;
+    font-size:16px;
+  }
+  
+  button[type="submit"] {
+    border:none;
+    background:#fff;
+    color:$green;
+    font-size:20px;
+    padding:5px 15px;
+    border-radius:5px;
+  }
+}

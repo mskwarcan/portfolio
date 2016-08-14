@@ -1,0 +1,101 @@
+header {
+  padding:10px 0;
+  color:#fff;
+  margin-bottom:25px;
+  font-family: 'Cabin', sans-serif;
+  
+  @media(max-width:750px) {
+   margin:0; 
+  }
+  
+  .title {
+    display:inline-block;
+    margin-right:30px;
+    
+    @media(max-width:750px) {
+      text-align:center;
+      display:block;
+      margin:0;
+    }
+    
+    h1 {
+      margin:0;
+      
+      a {
+        color:$font-color;
+        text-decoration:none;
+      }
+    }
+  
+    h3 {
+      color:$highlight;
+      margin:0;
+      font-size:24px;
+      
+      a {
+        color:$highlight;
+        text-decoration:none;
+      }
+    }
+  }
+  
+  nav {
+    display:inline-block;
+    vertical-align:top;
+    float:right;
+    
+    @media(max-width:750px) {
+      float:none;
+      text-align:center;
+      display:block;
+    }
+    
+    ul {
+      margin:12px 0;
+      padding:0;
+      
+      li {
+        display:inline-block;
+        border-left:solid 1px #fff;
+        padding:0 10px;
+        
+        @media(max-width:420px) {
+          padding:0;
+          border:none;
+        }
+        
+        &:first-child {
+          border:none;
+        }
+        
+        a {
+          display:inline-block;
+          padding:5px;
+          font-size:18px;
+          color:#fff;
+          text-decoration:none;
+          
+          @media(max-width:350px) {
+           font-size:16px; 
+          }
+          
+          i.fa {
+            color:#fff;
+            
+            @media(max-width:550px) {
+              display:none;
+            }
+          }
+          
+          &.active {
+            border-bottom:2px solid $highlight;
+            
+            i {
+              color:$highlight;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,284 @@
+.intro {
+  color:#fff;
+  text-align:center;
+  font-size:24px;
+  max-width:600px;
+  margin:0 auto;
+  
+  p {
+    margin:0 10px 30px;
+    padding-bottom:30px;
+    border-bottom: 1px solid $highlight;
+  }
+}
+
+.filter {
+  margin:0 10px 15px;
+  text-align:center;
+  
+  h3 {
+    color:#fff;
+    display:inline-block;
+    margin:0 20px 20px 0;
+  }
+  
+  .tags {
+    display:inline-block;
+    
+    button {
+      border-radius:5px;
+      color:$green;
+      border:none;
+      background:#fff;
+      text-decoration:none;
+      cursor:pointer;
+      display:inline-block;
+      margin: 0 0 5px 0;
+      padding:5px 10px;
+      font-size:13px;
+    
+      &.active {
+        color:#fff;
+        border:1px solid #fff;
+        background:$green;
+      }
+    }
+  }
+}
+
+a.project {
+  width:33.33333%;
+  box-sizing:border-box;
+  float:left;
+  padding:0 0 0 0px;
+  display:inline-block;
+  color:$font-color;
+  text-align:center;
+  text-decoration:none;
+  position:relative;
+  line-height:0;
+  margin:0;
+  
+  @media(max-width:750px) {
+   width:49.9%;
+  }
+  
+  @media(max-width:400px) {
+    width:100%;
+  }
+  
+  .overlay-container {
+    position:relative;
+    
+    &:hover .overlay {
+      display:block;
+    }
+    
+    .overlay {
+      background:url('white-overlay.png');
+      box-sizing:border-box;
+      display:block;
+      height:100%;
+      width:100%;
+      position:absolute;
+      top:0;
+      display:none;
+      
+      p {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    
+    img {
+      width:100%;
+      height:auto;
+      box-sizing:border-box;
+    }
+  }
+  
+  p {
+    margin:0;
+    box-sizing:border-box;
+    text-align:center;
+    width:100%;
+    color:$green;
+    line-height:1.2;
+    background:#fff;
+    padding:10px;
+    font-size:28px;
+    position: absolute;
+    top: 40%;
+    
+    @media(max-width:750px) {
+     font-size:24px; 
+    }
+  }
+}
+
+.portfolio {
+  position:fixed;
+  top:0;
+  left:-100%;
+  overflow:auto;
+  width:100%;
+  height:100%;
+  background:#fff;
+  z-index:1000;
+  
+  .close {
+    background:#000;
+    cursor:pointer;
+    color:#fff;
+    padding:10px 13px;
+    position:absolute;
+    top:0;
+    z-index:100;
+    right:0;
+  }
+  
+  .images,
+  .text {
+    position:relative;
+    height:100%;
+    box-sizing:border-box;
+    padding:15px;
+    float:left;
+  }
+  
+  .text {
+    width:33.3%;
+    
+    @media(max-width:767px) {
+      width:100%;
+      height:30%;
+    }
+    
+    @media(max-width:440px) {
+      height:auto;
+      font-size:14px;
+    }
+    
+    h2 {
+      color:$green;
+      margin:15px 0 0;
+      font-size:28px;
+      
+      @media(max-width:767px) {
+       margin-top:0; 
+      }
+    }
+    
+    p {
+      margin-top:5px;
+      line-height:1.4;
+      color:$grey;
+      
+      &.tags {
+        font-size:14px;
+      }
+    }
+  }
+  
+  .images {
+    width:66.6%;
+    text-align:center;
+    background:$green;
+    
+    @media(max-width:767px) {
+      width:100%;
+      height:70%;
+    }
+    
+    @media(max-width:440px) {
+     height:auto;
+     min-height:40%;
+    }
+    
+    .loading {
+      position:absolute;
+      background:$green;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      
+      img {
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-79px 0 0 -79px;
+      }
+    }
+    
+    .image-content {
+      width:100%;
+      height:100%;
+    }
+    
+    .feature {
+      height:80%;
+      box-sizing:border-box;
+      padding-bottom:15px;
+      
+      @media(max-width:950px) {
+       height:auto; 
+      }
+      
+      @media(max-width:767px) {
+       height:80%; 
+      }
+      
+      @media(max-width:440px) {
+        height:auto; 
+      }
+      
+      img {
+        width:auto;
+        height:100%;
+        max-width:100%;
+        max-height:100%;
+        
+        @media(max-width:950px) {
+          height:auto;
+        }
+      }
+    }
+    
+    .thumbs {
+      height:20%;
+      overflow:hidden;
+      
+      a {
+        padding:5px 10px;
+        height:100%;
+        width:25%;
+        box-sizing:border-box;
+        float:left;
+        line-height:0;
+        display:inline-block;
+        
+        @media(max-width:767px) {
+          width:20%;
+        }
+        
+        img {
+          max-width:100%;
+          width:auto;
+          max-height:100%;
+          box-sizing:border-box;
+        }
+        
+        &.active {
+          padding:0 5px;
+          
+          img {
+            padding:0px 0px;
+            border:5px solid $highlight;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,45 @@
 {% extends 'layout.html' %}
 {% block content %}
-  {% for project in portfolio_projects %}
-    <h2><a href="#">{{ project.project_name }}</a></h2>
-  {% endfor %}
-{% endblock %}  
+  <div class="portfolio">
+    <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="images">
+      <div class="loading"><img src="/static/ring-alt.svg" /></div>
+      <div class="image-content"></div>
+    </div>
+    <div class="text"></div>
+  </div>
+  
+  <div class="intro">
+    <p>Hello, my name is Mike Skwarcan and I'm a web developer currently living in Fort Worth.</p>
+  </div>
+  
+  <div class="filter">
+    <h3>Filter by Category:</h3>
+    <div class="tags">
+      {% for tag in tags %}
+        <button class="{{ tag.slug }}" data-group='{{ tag.slug }}'>{{ tag.name }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="grid" class="projects">
+    {% for project in projects %}
+      <a href="#" class="project" data-id="{{project.id}}" data-groups="{{ project.tag_set.all|join:',' }}">
+        
+        <div class="overlay-container">
+          <div class="overlay">
+            <p>{{ project.project_name }}</p>
+          </div>
+          <img src="{{ project.thumbnail.url }}" />
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block menu %}
+    <li><a class="active" href="/"><i class="fa fa-file-code-o" aria-hidden="true"></i> Portfolio</a></li>
+    <li><a href="/about"><i class="fa fa-user" aria-hidden="true"></i> About Me</a></li>
+    <li><a target="_blank" href="/static/MikeSkwarcan_Resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Résumé</a></li>
+    <li><a href="/contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
+{% endblock %}

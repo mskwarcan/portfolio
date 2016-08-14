@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}
+  Contact - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <div class="intro">
+    <p>Your message has been sent. I will respond to you as soon as I can. </p>
+  </div>
+{% endblock %}
+
+{% block menu %}
+    <li><a href="/"><i class="fa fa-file-code-o" aria-hidden="true"></i> Portfolio</a></li>
+    <li><a href="/about"><i class="fa fa-user" aria-hidden="true"></i> About Me</a></li>
+    <li><a class="active" href="/contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
+{% endblock %}

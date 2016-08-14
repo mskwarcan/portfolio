@@ -1,0 +1,12 @@
+.about {
+  max-width:750px;
+  line-height:1.4;
+  margin:0 auto;
+  
+  h2 {
+    margin-top:0;
+    border-bottom: 1px solid $highlight;
+    text-align:center;
+    padding-bottom:5px;
+  }
+}

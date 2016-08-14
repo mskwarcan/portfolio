@@ -9,14 +9,45 @@
   <meta name="author" content="Mike Skwarcan">
   
   {% load staticfiles %}
-
+  
+  <link href='{% static "font-awesome/css/font-awesome.min.css" %}' type="text/css" rel="stylesheet" />
+  <link href='{% static "style.css" %}' type="text/css" rel="stylesheet" />
+  
+  <script src='{% static "jquery.js" %}'></script>
+  <script src='{% static "scripts.js" %}'></script>
+  
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
 <body>
-  {% block content %}
-  {% endblock %}  
+  <header>
+    <div class="wrapper">
+      <div class="title">
+        <h1><a href="/">Mike Skwarcan</a></h1>
+        <h3><a href="/">Web Developer</a></h3>
+      </div>
+      
+      <nav>
+        <ul>
+          {% block menu %}
+          {% endblock %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+  <footer>
+    <div class="wrapper">
+      <p>{% now "Y" %} Copyright Mike Skwarcan</p>
+    </div>
+  </footer>
 </body>
 </html>

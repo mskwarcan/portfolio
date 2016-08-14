@@ -1,3 +1,9 @@
+# Helpful commands
+- source venv/bin/activate
+- heroku local web
+- pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+- pip freeze > requirements.txt
+
 # Heroku Django Starter Template
 
 An utterly fantastic project starter template for Django 1.9.
