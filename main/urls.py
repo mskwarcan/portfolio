@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^about/$',views.about),
     url(r'^contact/$',views.ContactView.as_view(), name='contact'),
     url(r'^get_project/(?P<id>\d+)$',views.get_project),
+    url(r'^contact/success/$',views.success),
 ]

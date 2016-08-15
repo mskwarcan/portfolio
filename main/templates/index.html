@@ -2,7 +2,7 @@
 {% block content %}
   <div class="portfolio">
     <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
-    <div class="images">
+    <div class="images cf">
       <div class="loading"><img src="/static/ring-alt.svg" /></div>
       <div class="image-content"></div>
     </div>
@@ -25,7 +25,6 @@
   <div id="grid" class="projects">
     {% for project in projects %}
       <a href="#" class="project" data-id="{{project.id}}" data-groups="{{ project.tag_set.all|join:',' }}">
-        
         <div class="overlay-container">
           <div class="overlay">
             <p>{{ project.project_name }}</p>

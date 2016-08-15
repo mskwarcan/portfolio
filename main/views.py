@@ -23,10 +23,13 @@ def about(request):
 def get_project(request, id):
     project = Project.objects.get(id=id)
     return JsonResponse(project.as_json(), safe=False)
+    
+def success(request):
+    return render(request, 'contact_form/contact_form_sent.html')
 
 class ContactView(FormView):
     form_class = ContactForm
-    success_url = reverse_lazy('contact')
+    success_url = 'success'
     template_name = 'contact_form/contact_form.html'
 
     def form_valid(self, form):
