@@ -9,6 +9,7 @@ django-storages==1.4.1
 gunicorn==19.6.0
 ipython==5.1.0
 ipython-genutils==0.1.0
+newrelic==2.68.0.50
 pathlib2==2.1.0
 pexpect==4.2.0
 pickleshare==0.7.4
