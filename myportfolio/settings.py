@@ -145,8 +145,6 @@ AWS_SECRET_ACCESS_KEY = 'yNvNcL0Wown9pc2p8A0cWC4F+L5irea08WH+dNoZ'
 AWS_STORAGE_BUCKET_NAME = 'portfolio-skwarcan'
 AWS_QUERYSTRING_AUTH = False
 
-NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program command options
-
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'app54482535@heroku.com'
 EMAIL_HOST_PASSWORD = 'vaqfnz0k6636'
