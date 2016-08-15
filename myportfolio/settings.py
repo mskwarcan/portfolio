@@ -143,6 +143,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = 'AKIAI3R6AZQE4ACBD5LQ'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'portfolio-skwarcan'
+AWS_QUERYSTRING_AUTH = False
 
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'app54482535@heroku.com'
