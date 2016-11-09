@@ -12,6 +12,10 @@ body {
   background:$green;
   padding:0;
   color:$font-color;
+  
+  &.fixed {
+    position: fixed;
+  }
 }
 
 h1, h2, h3 {

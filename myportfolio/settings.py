@@ -21,7 +21,10 @@ is_prod = os.environ.get('IS_HEROKU', None)
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ")70-g=cp1q4lj5sg_@mgvelal7=%hzc=uw(!+&x)k%)ikhcnld"
+if is_prod:
+  SECRET_KEY = os.environ.get('SECRET_KEY')
+else:
+  SECRET_KEY = ")70-g=cp1q4lj5sg_@mgvelal7=%hzc=uw(!+&x)k%)ikhcnld"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

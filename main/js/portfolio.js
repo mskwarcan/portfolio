@@ -123,19 +123,20 @@ $(document).ready(function() {
     $(".portfolio").animate({
       left: 0,
     }, 500, function() {
-
-  });
+      $('body').addClass('fixed');
+    });
 
     e.preventDefault();
   });
 
   $('.close').click(function(e) {
+    $('body').removeClass('fixed');
     $(".portfolio").animate({
       left: '-100%',
     }, 500, function() {
       $('.loading').css('display', 'block');
-  });
-
+    });
+    
     e.preventDefault();
   });
 });
