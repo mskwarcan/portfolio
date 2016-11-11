@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import dj_database_url
 
+os.environ['AWS_ACCESS_KEY_ID'] = 'AKIAIBKXU77BEAPHYRLA'
+os.environ['AWS_SECRET_ACCESS_KEY'] = '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'
+os.environ['AWS_STORAGE_BUCKET_NAME'] = 'portfolio-skwarcan'
+
+os.environ['NEW_RELIC_LICENSE_KEY'] = '6ea5f8ec1e68e7e6f9d36110c1be4f34aee79fc8'
+os.environ['NEW_RELIC_LOG'] = 'stdout'
+os.environ['SENDGRID_PASSWORD'] = 'uM57WPGfNdNgJQ8n'
+os.environ['SENDGRID_USERNAME'] = 'app54482535@heroku.com'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
