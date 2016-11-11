@@ -10,6 +10,10 @@ from django.http import JsonResponse
 from django.core import serializers
 from .forms import ContactForm
 
+import sendgrid
+import os
+from sendgrid.helpers.mail import *
+
 # Create your views here.
 def index(request):
     context = dict()
@@ -36,7 +40,7 @@ class ContactView(FormView):
         contact_name = form.cleaned_data['contact_name']
         contact_email = form.cleaned_data['contact_email']
         form_content = form.cleaned_data['content']
-
+        
         template = get_template('contact_form/contact_form.txt')
         context = Context({
             'contact_name': contact_name,
@@ -44,7 +48,13 @@ class ContactView(FormView):
             'form_content': form_content
         })
         content = template.render(context)
-
-        send_mail('Contact Form Submission', content, 'contact@michaelskwarcan.com', ['mskwarcan@gmail.com'], fail_silently=False)
+        
+        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+        from_email = Email('contact@michaelskwarcan.com')
+        subject = "Contact Form Submission"
+        to_email = Email("mskwarcan@gmail.com")
+        content = Content("text/plain", content)
+        mail = Mail(from_email, subject, to_email, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
         
         return super(ContactView, self).form_valid(form)
